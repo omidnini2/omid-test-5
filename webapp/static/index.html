@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>کلون صدای فارسی با هوش مصنوعی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="light">
+  <div class="container">
+    <h1>تبدیل متن به گفتار با صدای شما</h1>
+
+    <!-- Theme toggle -->
+    <div class="theme-toggle">
+      <label>
+        <input type="checkbox" id="themeSwitch" />
+        تم تاریک / روشن
+      </label>
+    </div>
+
+    <!-- Voice upload / record -->
+    <section>
+      <h2>آپلود یا ضبط صدای شما (حداکثر ۲۰ دقیقه - ۵۰ مگابایت)</h2>
+      <input type="file" id="voiceInput" accept="audio/*" />
+      <div class="record-controls">
+        <button id="recordBtn">ضبط</button>
+        <button id="stopBtn" disabled>توقف</button>
+      </div>
+      <audio id="recordedPreview" controls hidden></audio>
+    </section>
+
+    <!-- Text input -->
+    <section>
+      <h2>متن مورد نظر (تا ۱۰۰٬۰۰۰ کاراکتر)</h2>
+      <textarea id="textInput" rows="8" maxlength="100000" placeholder="متن خود را اینجا وارد کنید..."></textarea>
+      <div id="charCount">0 / 100000</div>
+    </section>
+
+    <button id="submitBtn">تولید صدا</button>
+
+    <!-- Download section -->
+    <section id="downloadSection" hidden>
+      <h2>دانلود / اشتراک‌گذاری</h2>
+      <audio id="outputAudio" controls></audio>
+      <a id="downloadLink" download="cloned_voice.wav">دانلود فایل</a>
+    </section>
+
+    <!-- Supported languages -->
+    <section>
+      <h2>زبان‌های پشتیبانی شده</h2>
+      <ul id="langList"></ul>
+    </section>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
